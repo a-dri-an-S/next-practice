@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta name="description" content="A site for my programming portfolio"/>
-                    <meta charset="utf-8" />
+                    <meta charSet="utf-8" />
                     <meta name="robots" content="noindex, nofollow" />
                     {/* Viewport meta tags should be moved to _app.js */}
                     {/* <meta name="viewport" content="width=device-width"/> */}
