@@ -1,6 +1,11 @@
+import Error from "./_error";
 import Layout from '../components/Layout';
 
-const About = ({ user }) => {
+const About = ({ user, statusCode }) => {
+
+    if (statusCode) {
+        return <Error statusCode={ statusCode }/>
+    }
 
     return (
         <Layout title="About Me">
@@ -12,9 +17,10 @@ const About = ({ user }) => {
 }
 
 About.getInitialProps = async () => {
-    const res = await fetch("https://api.github.com/users/a-dri-an-S")
+    const res = await fetch("https://api.github.com/users/a-dri-an-S");
+    const statusCode = res.status > 200 ? res.status :  false;
     const data = await res.json()
-    return { user: data }
+    return { user: data, statusCode }
 }
 
 export default About

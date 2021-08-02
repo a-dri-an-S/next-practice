@@ -1,9 +1,11 @@
 import Layout from '../components/Layout';
 
-const Error = () => {
+const Error = ({ statusCode }) => {
     return (
         <Layout title="Error">
-            <p>Page doesn't exist! Sorry!!</p>
+            { statusCode ? 
+                `Couldn't load your user data: Status Code ${statusCode}` 
+                : "Page doesn't exist! Sorry!!"}
         </Layout>
     )
 }
