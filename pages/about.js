@@ -23,4 +23,4 @@ About.getInitialProps = async () => {
     return { user: data, statusCode }
 }
 
-export default About
+export default About;
